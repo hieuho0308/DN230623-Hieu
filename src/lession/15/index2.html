@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="myList">
+        <div> Number 1 </div>
+    </div>
+    <button onclick="myFunction()"> Add </button>
+    <button onclick="myFunctionRemove()"> remove </button>
+    <button onclick="myFunctionEdit()"> edit</button>
+</body>
+<script>
+    arr = [1, 2, 4, 7, 11];
+
+    function myFunction() {
+        for (var i = 1; i < arr.length; i++) {
+            var node = document.createElement('div');
+            console.log('node', node)
+            var textnode = document.createTextNode('Number' + arr[i]);
+            node.setAttribute("id", i);
+            console.log('textnode', textnode)
+            node.appendChild(textnode);
+            console.log('node', node)
+            document.getElementById('myList').appendChild(node);
+            var node = document.getElementById("mylist");
+
+
+        }
+    }
+    function myFunctionRemove() {
+        var removeElement = document.getElementById("2");
+        removeElement.remove();
+    }
+    function myFunctionEdit() {
+        arr[3] = 100;
+        var EditElement = document.getElementById("3");
+        EditElement.innerHTML = 'Number' + arr[3];
+        //console.log(EditElement.innerHTML);
+    }
+
+     //var index = 0;
+
+    // function myFunction() {
+    //     index += 1;
+    //     if (index >= arr.length) return;
+    //     var node = document.createElement('div');
+    //     var textnode = document.createTextNode('Number' + arr[index]);
+    //     node.appendChild(textnode);
+    //     document.getElementById('myList').appendChild(node);
+
+    // }
+</script>
+
+</html>

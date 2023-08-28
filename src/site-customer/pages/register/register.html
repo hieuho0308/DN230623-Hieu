@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="\site-customer\styles\register.css" />
+    <script src="\site-customer\pages\index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div include-html="\site-customer\components\organisms\header\index.html">header</div>
+    <div include-html="\site-customer\components\organisms\register\index.html">Main</div>
+    <div include-html="\site-customer\components\organisms\footer\index.html">footer</div>
+</body>
+<script>
+    includeHTML();
+</script>
+<script>
+    window.addEventListener('load', () => {
+        setTimeout(function () {
+            const user = [
+                { name: 'HieuHX', mail: 'hieu0308@gmail.com', password: 'hieu0802', phone: '935555254' },
+                { name: 'nguyenvanB', email: 'vanB@gmail.com', password: 'ab1234', phone: '905933921' },
+                { name: 'nguyenvanC', email: 'vanC@gmail.com', password: 'ab12345', phone: '905119063' },
+                { name: 'nguyenvanD', email: 'vanD@gmail.com', password: 'ab123456', phone: '90911333' },
+                { name: 'nguyenvanE', email: 'vanE@gmail.com', password: 'ab1234567', phone: '924111555' },
+            ]
+            var myRegister = document.getElementById('myRegister');
+            console.log(myRegister);
+            var nameInput = document.getElementById('name');
+            var passwordInput = document.getElementById('password')
+            myRegister.addEventListener("click", (e) => {
+                var nameValue = nameInput.value
+                var passswordValue = passwordInput.value
+                var userList = JSON.parse(localStorage.getItem('users'))
+                // nameInput.value = ''
+                // passwordInput.value = ''
+                // nameInput.focus()
+
+                for (var i = 0; i < userList.length; i++) {
+                    console.log(nameValue, userList[i].name);
+                    console.log(passswordValue, userList[i].password);
+                    if (nameValue === userList[i].name && passswordValue === userList[i].password) {
+                        console.log('thanh cong');
+                        //chuyen ve trang chu
+                        window.location.href = '/'
+                        localStorage.setItem('user_register', JSON.stringify({ name: nameValue, password: passswordValue },));
+                        break;
+                    } else {
+                        console.log('that bai');
+                    }
+                }
+            })
+            localStorage.setItem('users', JSON.stringify(user));
+        }, 1000)
+    })
+</script>
+
+</html>

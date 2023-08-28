@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> Lession 11</p>
+</body>
+<script>
+    console.log('demo')
+    var child1 = new Array(2, 3, 5)
+    var child2 = new Array('C', 'B',)
+
+    var itemA = new Array(1, 2, 7)
+    var itemB = new Array(child1, child2)
+    var itemC = new Array('A', 'B', 'C')
+    var arr = new Array(itemA, itemB, itemC)
+    //console.log('arr', arr)
+
+    // console.log('child1', arr[1][0][2])
+    // console.log('valueC', arr[2][2])
+
+    itemA.push(3, 7)
+    itemC.pop()
+    //  console.log('push', itemA)
+    // console.log('pop', itemC)
+
+    itemC[1] = 'NGUYEN VAN B'
+    //  console.log('replace', itemC)
+
+
+    var cities = ['HA NOI', 'DA NANG', 'CAN THO', 'HO CHI MINH', 'VUNG TAU', 'QUY NHON',]
+    for (var i = 0; i < cities.length; i++) {
+        var itemCi = cities[i]
+        //  console.log('index', i)
+        //  console.log('phan tu trong mang', cities[i])
+        if (itemCi = 'HO CHI MINH') {
+            // console.log('index', itemCi)
+        }
+    }
+
+
+    let myColor = ['Red', 'Green', 'White', 'Black']
+    const points = [3, 4, 6, -9, 10, -88, 2]
+    // noi cac phan tu trong mang dau ra ',','+'
+    var Arr1 = myColor.join(',')
+    var Arr2 = myColor.join('+')
+    console.log('Bai1', Arr1)
+    //console.log('Bai1', Arr2)
+    // dao nguoc phan tu trong mang
+    var Arr3 = myColor.reverse();
+    //console.log('Bai2', Arr3)
+    // them phan tu tvao mang
+    //points.push(39);
+    // console.log('Bai3', points)
+    // thay the index 5 bang so 99
+    var i = 5
+    //points[5] = 99
+    //console.log('Bai4', points)
+
+    //Nhập 1 số, tìm vị trí trong mảng
+    var a = prompt()
+    console.log(a)
+    for (var i = 0; i < points.length; i++) {
+        var Arr4 = points[i]
+        if (Arr4 === '2') {
+            console.log('Bai4', Arr4)
+        }
+    }
+    var min = points[0]
+    for (var i = 1; i < points.length; ++i) {
+        if (points[i] < min) {
+            min = points[i]
+        }
+    }
+    console.log('min', min)
+
+    var max = points[0]
+    for (var i = 1; i < points.length; i++) {
+        if (points[i] > max) {
+            max = points[i]
+        }
+    }
+    console.log('max', max)
+
+
+</script>
+
+</html>

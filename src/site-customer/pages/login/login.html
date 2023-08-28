@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="\site-customer\styles\login.css" />
+    <script src="\site-customer\pages\index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div include-html="\site-customer\components\organisms\header\index.html">header</div>
+    <div include-html="\site-customer\components\organisms\login\index.html">Main</div>
+    <div include-html="\site-customer\components\organisms\footer\index.html">footer</div>
+
+</body>
+<script>
+    includeHTML();
+</script>
+
+<script>
+    window.addEventListener('load', () => {
+        setTimeout(function () {
+            // localStorage.clear();
+            let userLogin = localStorage.getItem('user_login')
+            if (userLogin == null) {
+                console.log("chua dang nhap")
+            } else {
+                console.log("da dang nhap")
+                window.location.href = '/'
+            }
+            localStorage.clear();
+            const user = [
+                { name: 'HieuHX', mail: 'hieu0308@gmail.com', password: 'hieu0802' },
+                { name: 'nguyenvanB', mail: 'vanB@gmail.com', password: 'ab1234' },
+                { name: 'nguyenvanC', mail: 'vanC@gmail.com', password: 'ab12345' },
+                { name: 'nguyenvanD', mail: 'vanD@gmail.com', password: 'ab123456' },
+                { name: 'nguyenvanE', mail: 'vanE@gmail.com', password: 'ab1234567' },
+            ]
+            var myLogin = document.getElementById('myLogin');
+            console.log(myLogin);
+            var nameInput = document.getElementById('name');
+            var passwordInput = document.getElementById('password')
+            myLogin.addEventListener("click", (e) => {
+                var nameValue = nameInput.value
+                var passswordValue = passwordInput.value
+                var userList = JSON.parse(localStorage.getItem('users'))
+                // nameInput.value = ''
+                // passwordInput.value = ''
+                // nameInput.focus()
+
+                for (var i = 0; i < userList.length; i++) {
+                    console.log(nameValue, userList[i].name);
+                    console.log(passswordValue, userList[i].password);
+                    if (nameValue === userList[i].name && passswordValue === userList[i].password) {
+                        console.log('thanh cong');
+                        // localStor
+                        //chuyen ve trang chu
+                        localStorage.setItem('user_login', JSON.stringify({ name: nameValue, password: passswordValue },));
+                        window.location.href = '/'
+                        break;
+                    } else {
+                        console.log('that bai');
+                    }
+                }
+            })
+            localStorage.setItem('users', JSON.stringify(user));
+        }, 100);
+    })
+
+</script>
+
+</html>

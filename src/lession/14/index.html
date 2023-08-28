@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> Lession 14 </p>
+    <script>
+        // function 
+
+        function wellcome() {
+            console.log('Wellcome to rikkei Academy')
+
+        }
+        function helloUser(userName) {
+            console.log('Hello' + userName)
+        }
+
+        function addNumber(number1, number2) {
+            let sum = number1 + number2;
+            return sum;
+        }
+        wellcome();
+        helloUser('Nguyen Van A')
+        let sumNumber = addNumber(3, 5)
+        console.log(sumNumber)
+        var a = 10
+        function addNumber1(a, b) {
+            a++
+            console.log(a++)
+        }
+        addNumber1(a)
+        console.log(a);
+        (function (firtsName, lastName) {
+            console.log('Hello' + firtsName + ''
+                + lastName);
+        })('Rikkei', 'Academy');
+        //arrow function
+
+        var multiply1 = (number1, number2) => {
+            return number1 * number2;
+        }
+        console.log(multiply1(5, 8));
+
+        var multiply2 = (number1, number2) => number1
+            * number2;
+        console.log(multiply2(5, 8));
+        var sum2 = function () {
+            console.log(arguments);
+            let result = 0;
+            for (let i = 0; i < arguments.length; i++)
+                console.log(arguments[i])
+            return result;
+        }
+        sum2(2, 3, 4);
+        function autoGeneratorNumber() {
+            let num = 0;
+
+            function checkNumber() {
+                console.log(num)
+                return num
+            }
+            num++
+            return checkNumber;
+        }
+        var number = autoGeneratorNumber();
+        number();
+
+        function result(value) {
+            console.log(value);
+        }
+        function getSum(a, b, callback) {
+            var total = a + b;
+            callback(total);
+        }
+        getSum(5, 7, result);
+    </script>
+    <script>
+        // Bai Tap Ve Nha
+        var browser = ''
+        switch (browser) {
+            case 'Edge':
+                alert('You\' ve got the Edge')
+                break;
+            case 'Chrome':
+            case 'Firefox':
+            case 'Safari':
+            case 'Opera':
+                alert(' Okay we support these browsers too');
+                break;
+            default:
+                alert('We hope that this page looks ok')
+
+        }
+        var a = prompt('a?', '')
+        switch (a) {
+            case '0':
+                alert('0');
+                break;
+            case '1':
+                alert('1');
+                break;
+            case '2,3':
+                alert('2,3');
+                break;
+        }
+        var name = 'Admin'
+        var password = 'theMarter'
+        if (name === 'Admin' && password === 'theMarter') {
+            console.log('Wellcome');
+
+        } else if (name === '' || password === '') {
+            console.log('Canceld')
+        } else if (name === 'Admin' && password !== 'theMarter') {
+            console.log('wrong password')
+        }
+        else {
+            console.log('I don\'t know you')
+        }
+        // BMI
+        var weight = 120
+        var height = 5.5
+        var BMI = weight / (height ^ 2)
+        console.log(BMI)
+        if (BMI < 18.5) {
+            console.log('căng nặng thấp');
+        } else if (BMI > 18.5 && BMI < 24.9) {
+            console.log('Bình thường');
+        }
+        else if (BMI >= 25) {
+            console.log('Cao');
+        }
+        else if (BMI > 25 && BMI < 29.9) {
+            console.log('Tiền béo phì');
+        }
+        else if (BMI > 30 && BMI < 34.9) {
+            console.log('Tiền béo phì');
+        }
+
+        else {
+            console.log('Khác')
+        }
+
+        //var arr1 = [3, 5, 1, 8, -3, 7, 8];
+        //var arr2 = [7, 12, 6, 9, 20, 56, 89];
+        //arr3 = [];
+        ar4 = [0, 0, 0, 0, 0, 0];
+        //var min = minArray(arr1);
+        //var min = minArray(arr2);
+        //var min = minArray(arr3);
+        var min = minArray(arr4);
+        alert(min);
+        function minArray(arr) {
+            var min = arr[0];
+            for (var i = 1; i < arr.length; i++) {
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+
+    </script>
+</body>
+
+</html>

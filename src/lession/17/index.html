@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Student(studentId, studentName, studentOld, academy) {
+        //     this.studentId = studentId;
+        //     this.studentName = studentName;
+        //     this.studentOld = studentOld;
+        //     this.academy = academy;
+        //     this.study = function () {
+        //         return 'Learn HTML, CSS, JS for frontend programming at ' + this.academy;
+        //     }
+        // }
+
+        // var student = new Student('SV001', 'NGUYEN VAN A', 30, 'Rikkei academy');
+        // console.log(student.study());
+        // console.log(student.studentOld);
+
+        // var student = new Object();
+        // student.studentId = 'SV001';
+        // student.studentName = 'NGUYEN VAN A';
+        // student.academy = 'RIKKEI academy';
+        // student.number1 = 20
+        // student.number2 = 30
+        // student.tinhtong = function () {
+        //     return 'sum ' + (this.number1 + this.number2);
+        // }
+        // student.study = function () {
+        //     return 'Learn HTML, CSS, JS for frontend programming at ' + this.academy;
+        // }
+        // console.log(student.study());
+        // console.log(student.tinhtong());
+
+        // class Student {
+        //     constructor(studentId, studentName, academy) {
+        //         this.studentId = studentId;
+        //         this.studentName = studentName;
+        //         this.academy = academy;
+        //     }
+        //     stydy() {
+        //         return 'learn HTML, CSS, JS for pfrontend programming at' + this.academy;
+        //     }
+        // }
+        // var studentA = new Student('SV001', 'NGUYEN VAN A', 'RIKKEI ACADEMY');
+        // var studentB = new Student('SV002', 'NGUYEN VAN B', 'DT ACADEMY');
+        // var studentC = new Student('SV003', 'NGUYEN VAN C', 'BK ACADEMY');
+        // var studentD = new Student('SV004', 'NGUYEN VAN D', 'DA ACADEMY');
+        // var arr = [studentA, studentB, studentC, studentD];
+        // console.log(arr);
+        // class Item {
+        //     constructor(itemName, itemPrice, itemColor, itemLocation) {
+        //         this.itemName = itemName;
+        //         this.itemPrice = itemPrice;
+        //         this.itemColor = itemColor;
+        //         this.itemLocation = itemLocation;
+
+        //     }
+        // }
+        // var itemA = new Item('phone', 20, 'mau xanh', 'USA');
+        // var itemB = new Item('samsung', 240, 'mau do', 'hq');
+        // var itemC = new Item('nokia', 220, 'mau vang', 'jp')
+        // var itemD = new Item('xiaomi', 205, 'mau tim', 'uk')
+        // var arr = [itemA, itemB, itemC, itemD];
+        // console.log(arr)
+        // for (var i = 0; i < 10; i++) {
+        //     var itemE = new Item('oppo', Math.floor(Math.random() * 100), 'mau tim', 'sg');
+        //     arr.push(itemE);
+        // }
+
+        // for (var i = 0; i < 10; i++) {
+        //     var itemE = new Item('oppo', 240, 'mau tim', 'sg');
+        // }
+
+        // console.log(arr);
+
+        // console.log(studentA.studentId);
+        // console.log(studentB.studentId);
+        // console.log(studentC.studentId);
+        // console.log(studentD.studentId);
+        //console.log(student['studentId']);
+
+        //     for (const key in student) {
+        //     console.log(key);
+        //     console.log(student[key]);
+        // }
+        // homework
+        //cau1
+        var person = new Object();
+        person.firstName = 'Nguyen Van';
+        person.lastName = 'Binh';
+        person.fullName = function () {
+            return person.firstName + ' ' + person.lastName;
+        }
+        console.log(person.fullName())
+        person.lastName = 'Hoa';
+        console.log(person.fullName())
+        delete person.lastName;
+        console.log(person.fullName())
+        // Cau2
+        let checkEmpty = {};
+        const isObjectEmpty = (objectName) => {
+            console.log(Object.values(objectName));
+            return Object.keys(objectName).length === 0 ? false : true;
+        }
+
+        console.log(isObjectEmpty(checkEmpty))
+    </script>
+</body>
+
+</html>

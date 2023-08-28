@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="site-customer\styles\main.css" />
+    <script src="site-customer\pages\index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div include-html="site-customer\components\organisms\header\index.html">header</div>
+    <div include-html="site-customer\components\organisms\main\index.html">Main</div>
+    <div include-html="site-customer\components\organisms\footer\index.html">footer</div>
+</body>
+
+<script>
+    includeHTML();
+</script>
+<script>
+    window.addEventListener('load', () => {
+        setTimeout(function () {
+            var btn = document.querySelectorAll('button')
+            console.log('btn', btn)
+            btn.forEach(function (button, index) {
+                button.addEventListener('click', function () {
+                    var btnItem = event.target
+                    var product = btnItem.parentElement
+                    var productImg = product.querySelector('img').src
+                    var productPrice = product.querySelector('span').innerText
+                    // console.log(productItem, productPrice)
+                    // addCart(productItem, productPrice)
+
+                })
+            })
+        }, 1000)
+    })
+</script>
+<script>
+    window.addEventListener('load', function () {
+        const btnLogin = document.querySelector('.btn-login')
+        const userLogin = localStorage.getItem('user_login')
+
+        console.log(btnLogin);
+
+        if (userLogin) {
+            btnLogin.style.display = 'none'
+
+        } else {
+            btnLogin.style.display = 'block'
+
+        }
+
+    })
+</script>
+<script>
+    window.addEventListener('load', function () {
+        const btnRegister = document.querySelector('.btn-register')
+        const userRegister = localStorage.getItem('user_register')
+
+        console.log(btnRegister);
+
+        if (userRegister) {
+            btnRegister.style.display = 'none'
+
+        } else {
+            btnRegister.style.display = 'block'
+
+        }
+
+    })
+</script>
+
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="name">
+    <button onclick="myFunction"> Click me</button>
+</body>
+<script>
+ Function myFunction(){
+        var fullname = document.getElementById("name").value;
+        console.log('fullName: ' + fullName)
+    }
+
+    console.log('Nguyen Van A')
+    var name = "Nguyen Van B"
+    var valA = 20;
+    var valB = 15;
+    var valC = valA + valB
+    var valD = 'Ket Qua: ' + valC
+    var valF = Number(5) + valC
+    console.log(name)
+    console.log(valC)
+    console.log(valD)
+    console.log(valF)
+    valC += valB
+    console.log(valC)
+    if (valA > valB) {
+        console.log('A>B')
+    } else {
+        console.log('A<B')
+    }
+    if (valA > 10) {
+        console.log('A>10')
+    } else {
+        console.log('A=10')
+    }
+
+    if (valA > valB && (valA > valC || valA < valF)) {
+        console.log('true')
+    } else {
+        console.log('false')
+    }
+    var valG = valA > 5 ? 100 : 200;
+    var test = 'valG' + valG
+    console.log('valG' + valG)
+    console.log(test)
+</script>
+
+</html>
